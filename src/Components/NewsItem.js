@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import BreakingNewsImage from "../BreakingNews.jpg"; // Update the path if necessary
 
-export class NewsItem extends Component {
-  render() {
+const NewsItem = (props) => {
     // This is how we take props in class-based components;
-    let { title, description, imageUrl, newsUrl, author, date, source } = this.props;
+    let { title, description, imageUrl, newsUrl, author, date, source } = props;
     return (
       <div>
         <div className="card">
@@ -30,7 +29,7 @@ export class NewsItem extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 export default NewsItem;

@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export class NavBar extends Component {
-  render() {
+// Now converting class based components in function based components.
+// The class based code is already pushed to github.
+
+const NavBar = () => {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <nav className="navbar fixed-top navbar-expand-lg  navbar-dark bg-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               NewsApp
@@ -49,7 +51,7 @@ export class NavBar extends Component {
         </nav>
       </div>
     );
-  }
+  
 }
 
 export default NavBar;
