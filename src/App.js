@@ -6,7 +6,6 @@ import LoadingBar from "react-top-loading-bar";
 
 const App = () => {
   const [progress, setProgress] = useState(0);
-  const apikey = process.env.REACT_APP_NEWS_API;
 
   return (
     <div>
@@ -16,88 +15,13 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="General"
-                country="in"
-                category="General"
-              />
-            }
+            element={<News setProgress={setProgress} country="in" category="General" />}
           />
           <Route
-            path="/Science"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Science"
-                country="in"
-                category="Science"
-              />
-            }
+            path="/:category"
+            element={<News setProgress={setProgress} country="in" />}
           />
-          <Route
-            path="/Technology"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Technology"
-                country="in"
-                category="Technology"
-              />
-            }
-          />
-          <Route
-            path="/Business"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Business"
-                country="in"
-                category="Business"
-              />
-            }
-          />
-          <Route
-            path="/Sports"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Sports"
-                country="in"
-                category="Sports"
-              />
-            }
-          />
-          <Route
-            path="/Health"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Health"
-                country="in"
-                category="Health"
-              />
-            }
-          />
-          <Route
-            path="/Entertainment"
-            element={
-              <News
-                setProgress={setProgress}
-                apikey={apikey}
-                key="Entertainment"
-                country="in"
-                category="Entertainment"
-              />
-            }
-          />
+          {/* Additional routes for categories can be added here */}
         </Routes>
       </Router>
     </div>
